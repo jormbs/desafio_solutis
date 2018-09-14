@@ -28,7 +28,7 @@ CREATE TABLE PESSOA_FISICA
 (
   ID               INTEGER                      NOT NULL,
   NOME_NASCIMENTO  VARCHAR(45 CHAR),
-   _ID         INTEGER                      NOT NULL
+   DADOS_ID         INTEGER                      NOT NULL
 )
  ;
 
@@ -36,12 +36,12 @@ CREATE TABLE PESSOA_FISICA
 ALTER TABLE PESSOA_FISICA ADD (
   CONSTRAINT PESSOA_FISICA_PK
  PRIMARY KEY
- (ID,  _ID));
+ (ID,  DADOS_ID));
 
 
 ALTER TABLE PESSOA_FISICA
 ADD CONSTRAINT PESSOA_FISICA_R01
-FOREIGN KEY ( _ID) REFERENCES   (ID);
+FOREIGN KEY ( DADOS_ID) REFERENCES   (ID);
 
  -------------------------------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE PESSOA_JURIDICA
 (
   ID               INTEGER                      NOT NULL,
   RAZAO_SOCIAL  VARCHAR(45 CHAR),
-   _ID         INTEGER                      NOT NULL
+   DADOS_ID         INTEGER                      NOT NULL
 )
  ;
 
@@ -61,12 +61,12 @@ CREATE TABLE PESSOA_JURIDICA
 ALTER TABLE PESSOA_JURIDICA ADD (
   CONSTRAINT PESSOA_JURIDICA_PK
  PRIMARY KEY
- (ID,  _ID));
+ (ID,  DADOS_ID));
 
 
 ALTER TABLE PESSOA_JURIDICA ADD (
   CONSTRAINT PESSOA_JURIDICA_R01
- FOREIGN KEY ( _ID)
+ FOREIGN KEY ( DADOS_ID)
  REFERENCES   (ID));
 
  -----------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ CREATE TABLE UNIDADES
 (
   ID        INTEGER,
   NOME      VARCHAR(45 CHAR),
-   _ID  INTEGER
+   DADOS_ID  INTEGER
 )
  ;
 
@@ -86,11 +86,11 @@ CREATE TABLE UNIDADES
 ALTER TABLE UNIDADES ADD (
   CONSTRAINT UNIDADES_PK
  PRIMARY KEY
- (ID,  _ID));
+ (ID,  DADOS_ID));
 
 ALTER TABLE UNIDADES ADD (
-  CONSTRAINT UNIDADES_ _R01
- FOREIGN KEY ( _ID)
+  CONSTRAINT UNIDADES_DADOS_R01
+ FOREIGN KEY ( DADOS_ID)
  REFERENCES   (ID));
 
  -----------------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ CREATE TABLE ENDERECO
 (
   ID          INTEGER                           NOT NULL,
   LOGRADOURO  VARCHAR(45),
-   _ID    INTEGER
+   DADOS_ID    INTEGER
 )
  ;
 
@@ -114,8 +114,8 @@ ALTER TABLE ENDERECO ADD (
  (ID));
 
 ALTER TABLE ENDERECO ADD (
-  CONSTRAINT ENDERECO_
- FOREIGN KEY ( _ID)
+  CONSTRAINT ENDERECO_DADOS
+ FOREIGN KEY ( DADOS_ID)
  REFERENCES   (ID));
 -----------------------------------------------------------------------------------------------
 
@@ -127,7 +127,7 @@ CREATE TABLE TELEFONE
 (
   ID          INTEGER                           NOT NULL,
   NUMERO  	  INTEGER,
-   _ID    INTEGER
+   DADOS_ID    INTEGER
 )
  ;
 
@@ -138,8 +138,8 @@ ALTER TABLE TELEFONE ADD (
  (ID));
 
 ALTER TABLE TELEFONE ADD (
-  CONSTRAINT TELEFONE_
- FOREIGN KEY ( _ID)
+  CONSTRAINT TELEFONE_DADOS
+ FOREIGN KEY ( DADOS_ID)
  REFERENCES   (ID));
 -----------------------------------------------------------------------------------------------
 /*
@@ -252,7 +252,7 @@ CREATE TABLE PESSOA_FISICAHIST
   IDHIST  INTEGER                                   NOT NULL,
   ID               INTEGER                      ,
   NOME_NASCIMENTO  VARCHAR(45 CHAR),
-   _ID         INTEGER                      NOT NULL,
+   DADOS_ID         INTEGER                      NOT NULL,
   DATA DATE,
   HORA VARCHAR(5),
   ACAO VARCHAR(6)
@@ -276,7 +276,7 @@ CREATE TABLE PESSOA_JURIDICAHIST
   IDHIST  INTEGER                                   NOT NULL,
   ID               INTEGER,
   RAZAO_SOCIAL  VARCHAR(45 CHAR),
-   _ID         INTEGER,
+   DADOS_ID         INTEGER,
   DATA DATE,
   HORA VARCHAR(5),
   ACAO VARCHAR(6)
@@ -300,7 +300,7 @@ CREATE TABLE UNIDADESHIST
   IDHIST  INTEGER                                   NOT NULL,
   ID        INTEGER,
   NOME      VARCHAR(45 CHAR),
-   _ID  INTEGER,
+   DADOS_ID  INTEGER,
   DATA DATE,
   HORA VARCHAR(5),
   ACAO VARCHAR(6)
@@ -325,7 +325,7 @@ CREATE TABLE ENDERECOHIST
 IDHIST  INTEGER                                   NOT NULL,
   ID          INTEGER,
   LOGRADOURO  VARCHAR(45),
-   _ID    INTEGER,
+   DADOS_ID    INTEGER,
   DATA DATE,
   HORA VARCHAR(5),
   ACAO VARCHAR(6)
@@ -351,7 +351,7 @@ CREATE TABLE TELEFONEHIST
   IDHIST  INTEGER                                   NOT NULL,
   ID          INTEGER                           NOT NULL,
   NUMERO  	  INTEGER,
-   _ID    INTEGER,
+   DADOS_ID    INTEGER,
   DATA DATE,
   HORA VARCHAR(5),
   ACAO VARCHAR(6)
