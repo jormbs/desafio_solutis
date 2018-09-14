@@ -24,12 +24,12 @@ Minhas atividades:
 Na trigger da tabela telefone inclui uma função que lista pessoas com o mesmo telefone sempre que for inserido um número semelhante.
 
 # comandos DDL
-DDL 1 - DESAFIO_SOLUTIS.sql
-DDL 2 - fc_listapessoas.sql
-DDL 3 - Pr_ListaEquivalentes.sql
-DDL 4 - TRIGGERS.sql
+DDL 1 - DESAFIO_SOLUTIS.sql ;
+DDL 2 - fc_listapessoas.sql ;
+DDL 3 - Pr_ListaEquivalentes.sql ;
+DDL 4 - TRIGGERS.sql ;
 
-#comandos DML
+# comandos DML
 DML 5 - consultas e insserts.sql
 
 
